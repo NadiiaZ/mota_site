@@ -5,10 +5,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 const clips = [
   '/media/work/showreel-1.mp4',
   '/media/work/showreel-2.mp4',
-  '/media/work/showreel-3.mp4',
-  '/media/work/showreel-4.mp4',
-  '/media/work/showreel-5.mp4',
-  '/media/work/showreel-6.mp4',
+  '/media/work/showreel-1.mp4',
+  '/media/work/showreel-2.mp4',
+  '/media/work/showreel-1.mp4',
+  '/media/work/showreel-2.mp4',
 ]
 
 export default function Showreel() {
