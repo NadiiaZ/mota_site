@@ -15,7 +15,7 @@ export interface Project {
   aspect: 'video' | 'square' | 'portrait'
   accent: 'orange' | 'pink' | 'blue' | 'lime'
   // REPLACE: swap for a real poster frame (e.g. /media/work/<id>-poster.jpg)
-  posterLabel: string
+  posterLabel: "/media/work/ANB-12_v3_en_1080x1350.mp4"
   // REPLACE: point to a real hosted preview clip (e.g. /media/work/<id>-preview.mp4)
   videoSrc?: string
 }
