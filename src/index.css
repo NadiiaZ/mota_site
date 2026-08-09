@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    @apply bg-bg text-ink font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: #FF4D3D;
+    color: #111111;
+  }
+
+  :focus-visible {
+    outline: 2px solid #B8B2FF;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .container-mota {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-24 lg:py-36;
+  }
+
+  .eyebrow {
+    @apply font-display text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-ink-muted;
+  }
+
+  .gradient-text {
+    @apply bg-mota-gradient bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-ink px-6 py-3
+      font-display text-sm font-semibold uppercase tracking-wide text-bg
+      transition-transform duration-200 ease-mota hover:scale-[1.03] active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-line px-6 py-3
+      font-display text-sm font-semibold uppercase tracking-wide text-ink
+      transition-colors duration-200 ease-mota hover:border-ink/40 hover:bg-white/[0.04];
+  }
+
+  .link-underline {
+    background-image: linear-gradient(90deg, #FF4D3D, #B8B2FF);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size 0.3s var(--ease-mota, cubic-bezier(0.16, 1, 0.3, 1));
+  }
+
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 2px;
+  }
+}
+
+/* Subtle film-grain texture layered over the dark background, purely decorative */
+.grain-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+.skip-link {
+  @apply fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-ink px-5 py-3 font-display text-sm font-semibold text-bg
+    transition-transform duration-200 focus:translate-y-0;
+}
