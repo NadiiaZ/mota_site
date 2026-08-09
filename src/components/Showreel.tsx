@@ -49,7 +49,6 @@ export default function Showreel() {
               accent={frame.accent}
               showPlay
               ratioClassName="h-full w-full rounded-none"
-              video = "/media/work/ANB-12_v3_en_1080x1350.mp4"
             />
           </motion.div>
         </AnimatePresence>
